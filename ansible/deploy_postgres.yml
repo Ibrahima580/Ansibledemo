@@ -1,6 +1,8 @@
 - name: Deploy PostgreSQL Database
   hosts: localhost
   become: true
+  become_method: sudo
+  become_user: root
   tasks:
     - name: Apply secret
       kubernetes.core.k8s:
