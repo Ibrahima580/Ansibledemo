@@ -19,7 +19,7 @@ pipeline {
     stage('Deploy with Ansible') {
       steps {
         dir('ansible') {
-          sh 'sudo ansible-playbook -i inventory.ini deploy_postgres.yml -vvv'
+          sh 'ansible-playbook -i inventory.ini deploy_postgres.yml -vvv'
           sh 'sudo ansible-playbook -i inventory.ini deploy_backend.yml'
           sh 'sudo ansible-playbook -i inventory.ini deploy_frontend.yml'
         }
