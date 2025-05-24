@@ -1,0 +1,12 @@
+- name: Deploy Backend App
+  hosts: localhost
+  tasks:
+    - name: Apply backend deployment
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/backend-deployment.yaml
+
+    - name: Apply backend service
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/backend-service.yaml

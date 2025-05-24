@@ -1,0 +1,22 @@
+- name: Deploy PostgreSQL Database
+  hosts: localhost
+  tasks:
+    - name: Apply secret
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/postgres-secret.yaml
+
+    - name: Apply PVC
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/postgres-pvc.yaml
+
+    - name: Apply postgres deployment
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/postgres-deployment.yaml
+
+    - name: Apply postgres service
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/postgres-service.yaml

@@ -1,0 +1,12 @@
+- name: Deploy Frontend App
+  hosts: localhost
+  tasks:
+    - name: Apply frontend deployment
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/frontend-deployment.yaml
+
+    - name: Apply frontend service
+      kubernetes.core.k8s:
+        state: present
+        src: manifests/frontend-service.yaml
