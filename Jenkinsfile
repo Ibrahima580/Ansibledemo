@@ -16,13 +16,6 @@ pipeline {
       }
     }
 
-    stage('Pull Docker Images') {
-      steps {
-        sh 'docker pull ibrahim372/fr:latest'
-        sh 'docker pull ibrahim372/bk:latest'
-      }
-    }
-
     stage('Deploy with Ansible') {
       steps {
         dir('ansible') {
