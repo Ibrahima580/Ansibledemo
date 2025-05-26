@@ -5,10 +5,6 @@ pipeline {
     KUBECONFIG = "${HOME}/.kube/config"
   }
 
-  tools {
-    ansible 'Ansible'
-  }
-
   stages {
     stage('Checkout Repository') {
       steps {
