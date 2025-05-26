@@ -14,13 +14,16 @@
       kubernetes.core.k8s:
         state: present
         src: manifests/postgres-pvc.yaml
+        kubeconfig: /var/lib/jenkins/.kube/config
 
     - name: Apply postgres deployment
       kubernetes.core.k8s:
         state: present
         src: manifests/postgres-deployment.yaml
+        kubeconfig: /var/lib/jenkins/.kube/config
 
     - name: Apply postgres service
       kubernetes.core.k8s:
         state: present
         src: manifests/postgres-service.yaml
+        kubeconfig: /var/lib/jenkins/.kube/config
