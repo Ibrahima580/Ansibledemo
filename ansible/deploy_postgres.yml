@@ -1,6 +1,7 @@
 - name: Deploy PostgreSQL Database
   hosts: localhost
-  become: true
+  become: false
+  gather_facts: false
   become_method: sudo
   become_user: root
   tasks:
