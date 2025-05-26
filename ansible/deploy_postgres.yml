@@ -9,7 +9,7 @@
       kubernetes.core.k8s:
         state: present
         src: manifests/postgres-secret.yaml
-
+        kubeconfig: /var/lib/jenkins/.kube/config
     - name: Apply PVC
       kubernetes.core.k8s:
         state: present
